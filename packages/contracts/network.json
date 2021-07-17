@@ -1,0 +1,17 @@
+{
+  "mainnet": {
+    "chainId": "1",
+    "provider": "https://mainnet.infura.io/v3/a2ec37881c064ee393f1e5b747ebf870",
+    "explore": "https://etherscan.io/"
+  },
+  "rinkeby": {
+    "chainId": "4",
+    "provider": "https://rinkeby.infura.io/v3/a2ec37881c064ee393f1e5b747ebf870",
+    "explore": "https://rinkeby.etherscan.io/"
+  },
+  "localhost": {
+    "chainId": "31337",
+    "provider": "http://localhost:8545",
+    "explore": ""
+  }
+}

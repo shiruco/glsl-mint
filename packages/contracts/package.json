@@ -1,0 +1,32 @@
+{
+  "name": "contracts",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "run-localchain": "yarn hardhat node",
+    "deploy-local": "hardhat run scripts/0_deploy.ts --network localhost",
+    "deploy-mainnet": "hardhat run scripts/0_deploy.ts --network mainnet",
+    "deploy-rinkeby": "hardhat run scripts/0_deploy.ts --network rinkeby",
+    "deploy-matic": "hardhat run scripts/0_deploy.ts --network matic"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/hardhat-upgrades": "^1.9.0",
+    "@typechain/ethers-v5": "^7.0.1",
+    "@typechain/hardhat": "^2.1.2",
+    "chai": "^4.3.1",
+    "ethers": "^5.4.1",
+    "hardhat": "^2.4.3",
+    "hardhat-gas-reporter": "^1.0.4",
+    "hardhat-typechain": "^0.3.5",
+    "ts-generator": "^0.1.1",
+    "typechain": "^5.1.1"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.2.0",
+    "@openzeppelin/contracts-upgradeable": "^4.2.0"
+  }
+}
