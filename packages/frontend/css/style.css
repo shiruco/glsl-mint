@@ -1,0 +1,14 @@
+
+.ge_editor {
+  height: 100vh;
+}
+
+.mint-button {
+  width: 100px;
+  height: 30px;
+  background-color: aqua;
+  position: fixed;
+  top: 12px;
+  right: 5px;
+  z-index: 400;
+}

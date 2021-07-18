@@ -12,14 +12,15 @@ import "@openzeppelin/contracts-upgradeable/utils/StringsUpgradeable.sol";
 import "./extentions/HasSecondarySaleFees.sol";
 import "hardhat/console.sol";
 
-contract ShaderMint is
+contract GLSLMint is
     Initializable,
     OwnableUpgradeable,
     ERC721Upgradeable,
     ERC721BurnableUpgradeable,
     HasSecondarySaleFees
 {
-    mapping(uint256 => bytes32) public ipfsHashMap;
+    uint256 internal nextTokenId = 0;
+    mapping(uint256 => string) public ipfsHashMap;
 
     function initialize(
         address _owner,
@@ -54,16 +55,14 @@ contract ShaderMint is
 
     function tokenURI(uint256 _tokenId) public view override returns (string memory) {
         require(_exists(_tokenId), "token is not exists");
-        if (ipfsHashMap[_tokenId] != "") {
-            return string(abi.encodePacked("ipfs://", ipfsHashMap[_tokenId]));
-        } else {
-            return "";
-        }
+        return string(abi.encodePacked("ipfs://", ipfsHashMap[_tokenId]));
     }
 
-    function mint(address _to, uint256 _tokenId, bytes32 _hash) public onlyOwner {
-        ipfsHashMap[_tokenId] = _hash;
-        _mint(_to, _tokenId);
+    function mint(address _to, string memory _hash) public {
+        uint256 tokenId = nextTokenId;
+        nextTokenId = tokenId + 1;
+        ipfsHashMap[tokenId] = _hash;
+        _mint(_to, tokenId);
     }
 
     function _beforeTokenTransfer(

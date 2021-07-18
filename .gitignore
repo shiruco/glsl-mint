@@ -107,4 +107,7 @@ dist
 .deps/
 .openzeppelin/
 artifacts/
-cache/
+cache
+
+#firebse
+.runtimeconfig.json

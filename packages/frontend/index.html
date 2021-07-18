@@ -1,21 +1,53 @@
-<html>
-  <head>
-    <link type="text/css" rel="stylesheet" href="https://rawgit.com/patriciogonzalezvivo/glslEditor/gh-pages/build/glslEditor.css">
-  </head>
-  <body>
-      <div id="glsl_editor"></div>
-      <script type="application/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslEditor/gh-pages/build/glslEditor.js"></script>
-  </body>
-  <script type="text/javascript">
-      const glslEditor = new GlslEditor('#glsl_editor', { 
-          canvas_size: 500,
-          canvas_draggable: true,
-          theme: 'monokai',
-          multipleBuffers: true,
-          watchHash: true,
-          fileDrops: true,
-          menu: true
-      });
-  </script>
-</html>
+<!doctype html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="stylesheet" href="css/reboot.css">
+  <link rel="stylesheet" href="css/glslEditor.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <div id="glsl_editor"></div>
+  <button class="mint-button">Mint</button>
+  
+  <script type="application/javascript" src="lib/glslEditor.js"></script>
+  <script type="text/javascript">
+    const glslEditor = new GlslEditor('#glsl_editor', { 
+        canvas_size: 500,
+        canvas_draggable: true,
+        theme: 'monokai',
+        multipleBuffers: true,
+        watchHash: true,
+        fileDrops: true,
+        menu: true
+    });
+    window.editor = glslEditor
+  </script>
+  <script type="application/javascript" src="dist/bundle.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="/__/firebase/8.7.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="/__/firebase/8.7.1/firebase-analytics.js"></script>
+
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+</body>
+
+</html>

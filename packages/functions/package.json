@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "private": true,
-  "main": "dist/functions/src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "run-p dev:*",
     "dev:watch": "tsc --watch",
@@ -11,11 +11,13 @@
     "build": "tsc"
   },
   "dependencies": {
+    "ethers": "^5.4.1",
     "firebase-admin": "^9.11.0",
-    "ipfs-http-client": "^50.1.2"
+    "ipfs-http-client": "^50.1.2",
+    "firebase-functions": "^3.14.1"
   },
   "devDependencies": {
-    "ethers": "^5.4.1",
-    "firebase-functions": "^3.14.1"
+    
+    
   }
 }
