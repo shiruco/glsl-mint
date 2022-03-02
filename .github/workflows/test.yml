@@ -16,6 +16,6 @@ jobs:
       - run: |
           echo "${GITHUB_REF#refs/heads/}" | tr '._/' '-'
       - run: |
-          echo "${${REF##*/}}"
+          echo "${REF##*/}"
       - run: |
           echo ${{ github.ref }}
