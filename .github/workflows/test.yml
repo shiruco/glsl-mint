@@ -1,8 +1,11 @@
 name: test
 on:
-  pull_request:
-    branches: [develop]
+  # pull_request:
+  #   branches: [develop]
+  push:
+
   workflow_dispatch: {}
+
   # push:
   #   branches:    
   #     - develop
@@ -15,3 +18,7 @@ jobs:
       - run: echo "this is test"
       - run: |
           echo "${GITHUB_REF#refs/heads/}" | tr '._/' '-'
+      - run: |
+          echo "${REF##*/}"
+      - run: |
+          echo ${{ github.ref }}
