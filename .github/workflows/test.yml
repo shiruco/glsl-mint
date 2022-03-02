@@ -15,3 +15,7 @@ jobs:
       - run: echo "this is test"
       - run: |
           echo "${GITHUB_REF#refs/heads/}" | tr '._/' '-'
+      - run: |
+          echo "${${REF##*/}}"
+      - run: |
+          echo ${{ github.ref }}
