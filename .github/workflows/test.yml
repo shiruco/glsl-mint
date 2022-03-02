@@ -1,12 +1,17 @@
 name: test
 on:
-  push:
-    branches:    
-      - develop
-    tags:
-      - 'test-v[0-9]+.[0-9]+.[0-9]+'
+  pull_request:
+    branches: [develop]
+  workflow_dispatch: {}
+  # push:
+  #   branches:    
+  #     - develop
+  #   tags:
+  #     - 'test-v[0-9]+.[0-9]+.[0-9]+'
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
       - run: echo "this is test"
+      - run: |
+          echo "${GITHUB_REF#refs/heads/}" | tr '._/' '-'
